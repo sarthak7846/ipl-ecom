@@ -12,8 +12,15 @@ require("dotenv").config({
 const app = express();
 const port = process.env.PORT || 3000;
 
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || "https://ipl-ecom.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
-app.use(cors());
 connectToDb();
 
 app.get("/", (req, res) => {
