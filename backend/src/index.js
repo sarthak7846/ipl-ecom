@@ -125,26 +125,6 @@ app.get("/products", auth, async (req, res) => {
   }
 });
 
-app.post("/populate", async (req, res) => {
-  // console.log(req);
-
-  try {
-    const products = req.body;
-    await ProductModel.insertMany(req.body).then(() => {
-      res.status(200).send({
-        message: "this is what I got",
-        products,
-      });
-    });
-  } catch (err) {
-    console.log(err);
-
-    res.status(500).send({
-      message: "Error",
-    });
-  }
-});
-
 app.listen(port, () => {
   console.log(`Server is up on http://localhost:${port}`);
 });
