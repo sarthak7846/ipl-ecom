@@ -27,7 +27,7 @@ function App() {
     }
 
     axios
-      .get("http://localhost:3000/products", {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/products`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

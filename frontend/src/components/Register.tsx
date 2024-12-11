@@ -30,11 +30,11 @@ import "./fade-in.css";
 
 const FormSchema = z.object({
   name: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "Username must be at least 2 characters",
   }),
   email: z.string().email(),
   password: z.string().min(8, {
-    message: "Password must be at least 8 chars",
+    message: "Password must be at least 8 characters",
   }),
 });
 
@@ -60,7 +60,7 @@ const Register = () => {
     setIsLoading(true);
     console.log(formSubmissionData);
     axios
-      .post("http://localhost:3000/register", formSubmissionData)
+      .post(`${import.meta.env.VITE_BACKEND_URL}/register`, formSubmissionData)
       .then((res) => {
         setIsLoading(false);
         localStorage.setItem("authToken", res.data.token);
@@ -101,7 +101,7 @@ const Register = () => {
 
   return (
     <>
-      <AuroraBackground className={`${isVisible ? "fade-in" : ""}`}>
+      <AuroraBackground className={`${isVisible ? "fade-in" : ""} h-full`}>
         <div className="lg:text-3xl md:text-5xl font-bold dark:text-white text-center mt-2">
           Welcome to the IPL Merchandise Store
         </div>
@@ -113,7 +113,7 @@ const Register = () => {
           <CardHeader>
             <CardTitle className="text-center">Join Now</CardTitle>
             <CardDescription className="text-center">
-              Register today.
+              Register today
             </CardDescription>
           </CardHeader>
           <CardContent>
