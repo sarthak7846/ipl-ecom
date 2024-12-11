@@ -71,16 +71,14 @@ const Login = () => {
   };
 
   return (
-    <AuroraBackground className={`${isVisible ? "fade-in" : ""} h-full`}>
+    <AuroraBackground className={`${isVisible ? "fade-in" : ""}`}>
       <div className="lg:text-3xl md:text-5xl font-bold dark:text-white text-center mt-2">
         Welcome to the IPL Merchandise Store
       </div>
-      <div className="overflow-hidden">
-        <img
-          src="/ipl3.png"
-          className="w-36 h-36 object-cover my-4 bg-white rounded-xl"
-        />
-      </div>
+      <img
+        src="/ipl3.png"
+        className="w-36 h-36 object-cover my-4 bg-white rounded-xl"
+      />
 
       <Card className="z-10 my-4 w-96">
         <CardHeader>
