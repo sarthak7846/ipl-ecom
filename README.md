@@ -1,3 +1,5 @@
+## 🔴 Live URL : https://ipl-ecom.vercel.app/
+
 # 🛠️ Project Setup Instructions
 
 Follow the steps below to set up and run the project successfully. 🚀
